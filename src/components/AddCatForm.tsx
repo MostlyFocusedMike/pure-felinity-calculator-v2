@@ -1,4 +1,3 @@
-import { addCat } from "../catLocalStore";
 import type { Cat, CatGender } from "../types";
 import { parseTraits } from "../utils";
 
@@ -27,7 +26,6 @@ export default function AddCatForm({ handleAddCat }: Props) {
       createdAt: new Date().toISOString(),
       isTestable: false
     }
-    console.log('newCat:', newCat);
     handleAddCat(newCat)
 
     e.currentTarget.reset();
@@ -36,7 +34,7 @@ export default function AddCatForm({ handleAddCat }: Props) {
   return <form
     aria-labelledby="add-cat-header"
     onSubmit={handleSubmit}
-    className="border rounded w-fit p-2 m-auto"
+    className="scheme-dark border rounded w-fit p-2 m-auto"
   >
     <h2 id="add-cat-header" className="text-2xl text-center">Add New Cat</h2>
     <div>
@@ -47,19 +45,18 @@ export default function AddCatForm({ handleAddCat }: Props) {
         name="name"
         required
         className="border rounded px-2 m-1"
-        defaultValue={'tommy'}
       />
     </div>
-    <fieldset className="bg-slate-200 p-2">
+    <fieldset className="border rounded p-2">
       <legend>Gender</legend>
       <input type="radio" id="female" name="gender" value="f" required />
-      <label htmlFor="female" className="pr-2">Female</label>
-      <input type="radio" id="male" name="gender" value="m" defaultChecked />
-      <label htmlFor="male">Male</label>
+      <label htmlFor="female" className="px-2">Female</label>
+      <input type="radio" id="male" name="gender" value="m" />
+      <label htmlFor="male" className="px-2">Male</label>
     </fieldset>
     <div className="mt-2">
       <label htmlFor="rawTraits" >What are their traits?</label>
-      <textarea id="rawTraits" name="rawTraits" defaultValue={placeholder} className="block border rounded px-2 h-60 w-full" required></textarea>
+      <textarea id="rawTraits" name="rawTraits" placeholder={placeholder} className="block border rounded px-2 h-50 w-full bg-neutral-700" required></textarea>
       <small>Copy the formatted text from the cat page</small>
     </div>
     <button className="border rounded-full px-6 block m-auto mt-4 active:bg-slate-200">Save</button>

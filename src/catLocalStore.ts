@@ -53,7 +53,6 @@ export const getLocalStorageKey = (key: string) => {
 };
 
 export const setLocalCats = (cats: Cat[]) => {
-  console.log('cats setting:', cats);
   setLocalStorageKey('cats', cats);
 };
 
