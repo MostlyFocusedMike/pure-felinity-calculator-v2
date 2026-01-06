@@ -4,6 +4,7 @@ import CatsList from "./components/CatsList"
 import { getCats, setLocalCats } from "./catLocalStore"
 import { randomId } from "./utils";
 import type { Cat, NewCat } from "./types";
+import CatCombos from "./components/CatCombos";
 
 function App() {
   const [cats, setCats] = useState(getCats());
@@ -34,6 +35,7 @@ function App() {
       <main>
         <AddCatForm handleAddCat={handleAddCat} />
         <CatsList cats={cats} handleRemoveCat={handleRemoveCat} />
+        <CatCombos cats={cats} />
       </main>
     </div>
   )
