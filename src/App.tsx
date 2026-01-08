@@ -22,7 +22,6 @@ function App() {
     handleSetCats(cats.filter(({ id }) => id !== catId))
   }
 
-
   return (
     <div className="bg-neutral-800 text-stone-300">
       <header className="">
